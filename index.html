@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <title>Countdown zum Gründungsfest</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f5f5f5;
+        }
+        #countdown {
+            font-size: 2em;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+<div id="countdown">Countdown zum Gründungsfest … Tage</div>
+
+<script>
+    function updateCountdown() {
+        const targetDate = new Date('2026-06-02T00:00:00');
+        const today = new Date();
+
+        // Zeitdifferenz in Millisekunden
+        const diffTime = targetDate - today;
+
+        // Tage berechnen (aufrunden)
+        const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
+
+        document.getElementById('countdown').textContent =
+            `Countdown zum Gründungsfest ${diffDays} Tage`;
+    }
+
+    updateCountdown();
+</script>
+
+</body>
+</html>
