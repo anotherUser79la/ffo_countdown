@@ -38,7 +38,7 @@
         0
     </div>
     <div class="countdown-text">
-        Tage
+        Tagen
     </div>
 </div>
 
@@ -50,7 +50,14 @@
         const diffTime = targetDate - today;
         const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
 
-        document.getElementById('days').textContent = diffDays;
+        if(diffDays <= 0){
+            document.getElementsByClassName('countdown-text')[0].textContent = 'Party seit:'
+        }
+
+        if(Math.abs(diffDays) == 1)
+         document.getElementsByClassName('countdown-text')[1].textContent = 'Tag'
+
+        document.getElementById('days').textContent = Math.abs(diffDays);
     }
 
     updateCountdown();
