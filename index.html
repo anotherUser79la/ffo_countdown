@@ -51,13 +51,16 @@
         const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
 
         if(diffDays <= 0){
-            document.getElementsByClassName('countdown-text')[0].textContent = 'Party seit:'
+            document.getElementsByClassName('countdown-text')[0].textContent = 'Gründungsfest seit'
         }
 
         if(Math.abs(diffDays) == 1)
          document.getElementsByClassName('countdown-text')[1].textContent = 'Tag'
 
-        document.getElementById('days').textContent = Math.abs(diffDays);
+        if(Math.abs(diffDays) == 0)
+            document.getElementById('days').textContent = 'Heute';
+        else
+            document.getElementById('days').textContent = Math.abs(diffDays);
     }
 
     updateCountdown();
