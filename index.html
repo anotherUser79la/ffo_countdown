@@ -57,8 +57,11 @@
         if(Math.abs(diffDays) == 1)
          document.getElementsByClassName('countdown-text')[1].textContent = 'Tag'
 
-        if(Math.abs(diffDays) == 0)
+        if(Math.abs(diffDays) == 0){
             document.getElementById('days').textContent = 'Heute';
+            document.getElementsByClassName('countdown-text')[1].textContent = ''
+
+        }
         else
             document.getElementById('days').textContent = Math.abs(diffDays);
     }
